@@ -4,6 +4,7 @@ import Login from "./components/pages/Login"
 import Home from "./components/pages/Home"
 import AdminPanel from "./components/pages/AdminPanel"
 import MyTutors from "./components/pages/MyTutors"
+import Users from "./components/pages/Users"
 
 function App() {
   return(<>
@@ -16,6 +17,7 @@ function App() {
   <Route path="/admin_panell" element={<AdminPanel />} />
   <Route path="/login" element={<Login />} />
   <Route path="/tutors" element={<MyTutors />} />
+  <Route path="/users" element={<Users />} />
   
 
   </Routes>
