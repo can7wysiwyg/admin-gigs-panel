@@ -24,10 +24,10 @@ function AdminPanel() {
             <div className="card card-shadow border-0 mb-4">
               <div className="p-4">
                 <div className="icon-space">
-                  <div className="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">S</div>
+                  <div className="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">C</div>
                 </div>
-                <h6 className="font-weight-medium">Tutors Subjects</h6>
-                <p className="mt-3">section for viewing tutor's subjects</p>
+                <a href='/categories' className="font-weight-medium">Subjects Categories</a>
+                <p className="mt-3">section for viewing and managing subject's categories</p>
               </div>
             </div>
           </div>
