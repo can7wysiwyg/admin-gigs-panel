@@ -16,6 +16,8 @@ function Login() {
     localStorage.setItem("token", res.data.accesstoken);
     if (res.data.msg) {
      alert(res.data.msg)
+     alert("")
+     window.location.href = "/login"
     } else {
       window.location.href = "/";
     }
