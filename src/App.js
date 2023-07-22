@@ -3,6 +3,7 @@ import Header from "./components/pages/Header"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/Home"
 import AdminPanel from "./components/pages/AdminPanel"
+import MyTutors from "./components/pages/MyTutors"
 
 function App() {
   return(<>
@@ -14,6 +15,7 @@ function App() {
     <Route path="/" element={<Home />} />
   <Route path="/admin_panell" element={<AdminPanel />} />
   <Route path="/login" element={<Login />} />
+  <Route path="/tutors" element={<MyTutors />} />
   
 
   </Routes>

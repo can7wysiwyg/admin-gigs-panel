@@ -12,9 +12,9 @@ function AdminPanel() {
             <div className="card card-shadow border-0 mb-4">
               <div className="p-4">
                 <div className="icon-space">
-                  <div className="icon-round text-center d-inline-block rounded-circle bg-success-gradiant">T</div>
+                  <div  className="icon-round text-center d-inline-block rounded-circle bg-success-gradiant" >T</div>
                 </div>
-                <h6 className="font-weight-medium">My Tutors</h6>
+                <a href='/tutors'  className="font-weight-medium" style={{textDecorationLine: "none", fontWeight: "bolder"}}>My Tutors</a>
                 <p className="mt-3">section for viewing tutors</p>
               </div>
             </div>
