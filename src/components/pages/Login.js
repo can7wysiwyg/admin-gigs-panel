@@ -1,25 +1,31 @@
 import "../styles/login.css"
 import React, { useState } from 'react';
+import axios from "axios";
 
 function Login() {
-  const [inputEmail, setInputEmail] = useState('');
-  const [inputPassword, setInputPassword] = useState('');
+    const [values, setValues] = useState({email: "", password: ""})
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    setValues({ ...values, [name]: value })
 
-  const handleEmailChange = (event) => {
-    setInputEmail(event.target.value);
-  };
+    }
 
-  const handlePasswordChange = (event) => {
-    setInputPassword(event.target.value);
-  };
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const res = await axios.post("/admin/login", { ...values });
+    localStorage.setItem("token", res.data.accesstoken);
+    if (res.data.msg) {
+     alert(res.data.msg)
+    } else {
+      window.location.href = "/";
+    }
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
-    // Do something with the form data, e.g., send it to the server
-    console.log('Email:', inputEmail);
-    console.log('Password:', inputPassword);
-  };
+     
 
+  }
+
+
+ 
   return (
     <div className="body html">
     <div className="container kontainer">
@@ -34,8 +40,9 @@ function Login() {
             placeholder="Email address"
             required
             autoFocus
-            value={inputEmail}
-            onChange={handleEmailChange}
+            name="email"
+            value={values.email}
+            onChange={handleChange}
           />
           <input
             type="password"
@@ -43,14 +50,11 @@ function Login() {
             className="form-control"
             placeholder="Password"
             required
-            value={inputPassword}
-            onChange={handlePasswordChange}
+            name="password"
+            value={values.password}
+            onChange={handleChange}
           />
-          <div id="remember" className="checkbox">
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
-            </label>
-          </div>
+          
           <button className="btn btn-lg btn-primary btn-block btn-signin" type="submit">
             Sign in
           </button>

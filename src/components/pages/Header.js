@@ -9,9 +9,9 @@ function Header() {
         <Navbar.Toggle aria-controls="navbarNavDropdown" />
         <Navbar.Collapse id="navbarNavDropdown">
           <Nav className="ms-auto">
-            <Nav.Link href="#" className="mx-2 active">Home</Nav.Link>
-            <Nav.Link href="#" className="mx-2">Products</Nav.Link>
-            <Nav.Link href="#" className="mx-2">Pricing</Nav.Link>
+            <Nav.Link href="/" className="mx-2 active">Home</Nav.Link>
+            <Nav.Link href="/login" className="mx-2">Login</Nav.Link>
+            {/* <Nav.Link href="" className="mx-2">Pricing</Nav.Link> */}
             
           </Nav>
          </Navbar.Collapse>
