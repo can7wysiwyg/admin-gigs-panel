@@ -6,6 +6,7 @@ import AdminPanel from "./components/pages/AdminPanel"
 import MyTutors from "./components/pages/MyTutors"
 import Users from "./components/pages/Users"
 import Categories from "./components/pages/Categories"
+import UserProfile from "./components/pages/UserProfile"
 
 function App() {
   return(<>
@@ -20,6 +21,7 @@ function App() {
   <Route path="/tutors" element={<MyTutors />} />
   <Route path="/users" element={<Users />} />
   <Route path="/categories" element={<Categories />} />
+  <Route path="/user_profile/:id" element={<UserProfile />} />
   
 
   </Routes>

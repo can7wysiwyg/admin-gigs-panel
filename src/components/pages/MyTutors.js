@@ -47,7 +47,7 @@ if(tutors.length === 0) {
               <td>
                 <img src={tutor.userImage} alt={tutor.fullname} style={{ width: '50px' }} />
               </td>
-              <td>{tutor.fullname}</td>
+              <td> <a href={`/user_profile/${tutor._id}`}> {tutor.fullname}</a></td>
               <td>
                 {tutor.email}
               </td>
