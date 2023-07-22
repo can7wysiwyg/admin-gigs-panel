@@ -1,6 +1,7 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import { Table, Button, Modal, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import React, { useState, useEffect, useContext } from 'react';
+import { Table, Button, Modal, OverlayTrigger, Tooltip, Form, Container, Row, Col } from 'react-bootstrap';
+import { GlobalState } from '../../GlobalState';
 
 
 
@@ -30,6 +31,7 @@ if(tutors.length === 0) {
 }
 
     return(<>
+    <h1 style={{textAlign: "center", marginBottom: "2rem"}} >Tutors</h1>
     <Table striped bordered hover>
         <thead>
           <tr>
@@ -64,8 +66,11 @@ if(tutors.length === 0) {
 }
 
 const Buttons = ({tutor}) => {
-    
+    const state = useContext(GlobalState)
+        const token = state.token
         const [showModal, setShowModal] = useState(false);
+        const[role, setRole] = useState("")
+  
   
     const handleModalClose = () => {
       setShowModal(false);
@@ -75,10 +80,41 @@ const Buttons = ({tutor}) => {
       
       setShowModal(false);
     };
+
+    const handleChange = (event) => {
+        setRole(event.target.value)
+      }
+  
+  
+      const handleSubmit = async(event) => {
+        event.preventDefault()
+  
+       const res =  await axios.put(`/admin/update_user/${tutor._id}`, {role}, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+       })
+  
+       alert(res.data.msg)
+  
+        window.location.href = "/users"
+  
+      }
+    
   
   
   
   const handleDelete = async() => {
+
+    const res = await axios.delete(`/admin/delete_user/${tutor._id}`, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    })
+
+alert(res.data.msg)
+
+window.location.href = "/tutors"
     
   }
   
@@ -107,7 +143,35 @@ const Buttons = ({tutor}) => {
             <Modal.Title>Manage User</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <p>Edit the user's info:</p>
+          <p>Edit the user's status:</p>
+          <Container>
+          <Row className="justify-content-md-center">
+              <Col xs={12} md={6}>
+
+
+          <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicRole">
+                    <Form.Control
+                      type="number"
+                      name="role"
+                      value={role}
+                      onChange={handleChange}
+                      placeholder="update user role"
+                      min="0" max="1"
+                      required
+                    />
+                  </Form.Group>
+                  <Button variant="danger" type="submit">
+                    Submit
+                  </Button>
+
+              </Form>
+              </Col>
+            </Row>
+              </Container>
+
+
+
               
           </Modal.Body>
           <Modal.Footer>
