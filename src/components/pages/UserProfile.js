@@ -28,7 +28,7 @@ const UserProfile = () => {
 
    }, [id, token])
 
-console.log(single);
+
   return (
     <div className="container d-flex justify-content-center skeleton">
       <div className="card mt-5 pb-3 kard">
@@ -36,16 +36,15 @@ console.log(single);
           <img src={single.userImage} className="mr-3" height="80" alt="Profile" />
           <div className="media-body">
             <h5 className="mt-1 mb-0">{single.fullname}</h5>
-            <span className="text-muted">{single.email}</span>
-            
+            <span className="text-muted">{single.username}</span>
           </div>
         </div>
 
         <div className="d-flex flex-row justify-content-between align-items-center p-3 mx-3">
           <div className="d-flex flex-row align-items-center">
-            <i className="fas fa-suitcase"></i>
+            <i className="fas fa-phone"></i>
             <div className="d-flex flex-row align-items-start ml-3">
-              <span>Upcoming trips</span>
+              <span>{single.phoneNumber}</span>
             </div>
           </div>
           <div className="d-flex flex-row align-items-center mt-2">
@@ -55,30 +54,34 @@ console.log(single);
 
         <div className="d-flex flex-row justify-content-between align-items-center p-3 mx-3 sample">
           <div className="d-flex flex-row align-items-center">
-            <i className="fas fa-bell preview"></i>
+            <i className="fas fa-envelope"></i>
             <div className="d-flex flex-row align-items-start ml-3">
-              <span>Notification settings</span>
+              <span>{single.email}</span>
             </div>
-          </div>
-          <div className="d-flex flex-row align-items-center mt-2">
-            <i className="fas fa-angle-right preview"></i>
           </div>
         </div>
 
         <div className="d-flex flex-row justify-content-between align-items-center p-3 mx-3">
           <div className="d-flex flex-row align-items-center">
-            <i className="fas fa-money-bill-wave-alt"></i>
+            <i className="fas fa-lock"></i>
             <div className="d-flex flex-row align-items-start ml-3">
-              <span>Payment history</span>
+              <span>{single.securityAnswer}</span>
             </div>
           </div>
           <div className="d-flex flex-row align-items-center mt-2">
             <i className="fas fa-angle-right"></i>
           </div>
         </div>
+
+        {/* Social Media Icons */}
+        <div className="d-flex flex-row justify-content-center p-3">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="social-icon mr-3"><i className="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer" className="social-icon mr-3"><i className="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-instagram"></i></a>
+        </div>
       </div>
     </div>
-  );
+     );
 };
 
 export default UserProfile;
