@@ -16,7 +16,6 @@ function UserSubjects() {
 
     const {id } = useParams()
    const state = useContext(GlobalState)
-//    const token = state.token
    const [users] = state.UsersApi.users;
    const [paginated, setPaginated] = useState();
    const [currentPage, setCurrentPage] = useState(1);
@@ -180,7 +179,7 @@ const deleteSubject = async(event) => {
   {/* Modal */}
   <Modal show={showModal} onHide={() => setShowModal(false)}>
     <Modal.Header closeButton>
-      <Modal.Title>Modal Title</Modal.Title>
+      <Modal.Title>Are You Sure?</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       {/* Modal content goes here */}
