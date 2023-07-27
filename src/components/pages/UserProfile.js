@@ -14,7 +14,7 @@ const UserProfile = () => {
 
     const getSingle = async () => {
 
-        const res = await axios.get(`/admin/single_user/${id}`, {
+        const res = await axios.get(`https://apigigs.onrender.com/admin/single_user/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -72,6 +72,37 @@ const UserProfile = () => {
             <i className="fas fa-angle-right"></i>
           </div>
         </div>
+
+
+        <div className="d-flex flex-row justify-content-between align-items-center p-3 mx-3">
+          <div className="d-flex flex-row align-items-center">
+            <i className="fas fa-book"></i>
+            <div className="d-flex flex-row align-items-start ml-3">
+              <a href={`/user_subjects/${single._id}`} style={{textDecoration: "none"}}>subjects</a>
+            </div>
+          </div>
+          <div className="d-flex flex-row align-items-center mt-2">
+            <i className="fas fa-angle-right"></i>
+          </div>
+        </div>
+
+
+
+        <div className="d-flex flex-row justify-content-between align-items-center p-3 mx-3">
+          <div className="d-flex flex-row align-items-center">
+            <i className="fas fa-certificate"></i>
+            <div className="d-flex flex-row align-items-start ml-3">
+              <a href={`/user_qualifications/${single._id}`} style={{textDecoration: "none"}}>qualifications</a>
+            </div>
+          </div>
+          <div className="d-flex flex-row align-items-center mt-2">
+            <i className="fas fa-angle-right"></i>
+          </div>
+        </div>
+
+
+
+
 
         {/* Social Media Icons */}
         <div className="d-flex flex-row justify-content-center p-3">

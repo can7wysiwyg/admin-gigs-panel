@@ -16,7 +16,7 @@ function Categories() {
   useEffect(() => {
 
     const getCats = async() => {
-        const res = await axios.get("/admin/show_categories")
+        const res = await axios.get("https://apigigs.onrender.com/admin/show_categories")
 
         setCategories(res.data.results)
 
@@ -34,7 +34,7 @@ function Categories() {
 
   const handleAddCategory = async(e) => {
     e.preventDefault();
-    const res = await axios.post('/admin/create_category', {catName}, {
+    const res = await axios.post('https://apigigs.onrender.com/admin/create_category', {catName}, {
       headers: {
         Authorization: `Bearer ${token}`
       }

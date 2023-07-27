@@ -14,7 +14,7 @@ const[tutors, setTutors] = useState([])
 useEffect(() => {
 
     const getTutors = async() => {
-        const res = await axios.get("/auth/users")
+        const res = await axios.get("https://apigigs.onrender.com/auth/users")
         setTutors(res.data)
     }
 
@@ -89,7 +89,7 @@ const Buttons = ({tutor}) => {
     const handleSubmit = async(event) => {
       event.preventDefault()
 
-     const res =  await axios.put(`/admin/update_user/${tutor._id}`, {role}, {
+     const res =  await axios.put(`https://apigigs.onrender.com/admin/update_user/${tutor._id}`, {role}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -105,7 +105,7 @@ const Buttons = ({tutor}) => {
   
     const handleDelete = async() => {
 
-      const res = await axios.delete(`/admin/delete_user/${tutor._id}`, {
+      const res = await axios.delete(`https://apigigs.onrender.com/admin/delete_user/${tutor._id}`, {
           headers: {
               Authorization: `Bearer ${token}`
           }

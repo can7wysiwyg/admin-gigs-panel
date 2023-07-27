@@ -7,6 +7,8 @@ import MyTutors from "./components/pages/MyTutors"
 import Users from "./components/pages/Users"
 import Categories from "./components/pages/Categories"
 import UserProfile from "./components/pages/UserProfile"
+import UserSubjects from "./components/pages/UserSubjects"
+import UserQualifications from "./components/pages/UserQualifications"
 
 function App() {
   return(<>
@@ -22,6 +24,8 @@ function App() {
   <Route path="/users" element={<Users />} />
   <Route path="/categories" element={<Categories />} />
   <Route path="/user_profile/:id" element={<UserProfile />} />
+  <Route path="/user_subjects/:id" element={<UserSubjects />} />
+  <Route path="/user_qualifications/:id" element={<UserQualifications />} />
   
 
   </Routes>

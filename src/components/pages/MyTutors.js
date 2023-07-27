@@ -14,7 +14,7 @@ const[tutors, setTutors] = useState([])
 useEffect(() => {
 
     const getTutors = async() => {
-        const res = await axios.get("/auth/users")
+        const res = await axios.get("https://apigigs.onrender.com/auth/users")
         setTutors(res.data)
     }
 
@@ -22,7 +22,6 @@ useEffect(() => {
 
 
 }, [])
-console.log(tutors);
 
 if(tutors.length === 0) {
     return(<>
