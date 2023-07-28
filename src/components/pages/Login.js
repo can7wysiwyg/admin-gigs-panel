@@ -19,7 +19,7 @@ function Login() {
      alert("")
      window.location.href = "/login"
     } else {
-      window.location.href = "/";
+      window.location.href = "/admin_panell";
     }
 
      
@@ -32,7 +32,7 @@ function Login() {
     <div className="body html">
     <div className="container kontainer">
       <div className="card card-container">
-        <p id="profile-name" className="profile-name-card">Please Login</p>
+        <p id="profile-name" className="profile-name-card">Admin Login</p>
         <form className="form-signin" onSubmit={handleSubmit}>
           <span id="reauth-email" className="reauth-email"></span>
           <input

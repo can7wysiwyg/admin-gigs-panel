@@ -23,6 +23,19 @@ function Header() {
     );
   };
 
+  const TextRemover = () => {
+
+    if(isLogged === true) {
+      return(<>
+        <Nav.Link href="/" className="mx-2 active"></Nav.Link>
+      
+      </>) 
+
+    }else if(isLogged === false) {
+     return(<> <Nav.Link href="/" className="mx-2 active">Home</Nav.Link> </> )
+    }
+  }
+
 
   const AdminRoute = () => {
     return (
@@ -44,14 +57,13 @@ function Header() {
 
 
   return (
-    <Navbar bg="info" variant="light" expand="lg" className="p-3">
+    <Navbar bg="dark" variant="dark" expand="lg" className="p-3">
       <div className="container-fluid">
-        <Navbar.Brand href="#">Admin Section</Navbar.Brand>
+        <Navbar.Brand href="#">Tutor Finder Admin Section</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarNavDropdown" />
         <Navbar.Collapse id="navbarNavDropdown">
           <Nav className="ms-auto">
-            <Nav.Link href="/" className="mx-2 active">Home</Nav.Link>
-            
+            {TextRemover()}
           </Nav>
           <Nav className="ml-auto">
           {isLogged ? loggedRouter() : ""}
